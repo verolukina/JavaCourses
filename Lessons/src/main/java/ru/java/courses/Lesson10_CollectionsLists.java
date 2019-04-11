@@ -1,9 +1,6 @@
 package ru.java.courses;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Lesson10_CollectionsLists {
 
@@ -19,9 +16,12 @@ public class Lesson10_CollectionsLists {
      * Удалять элементы из итерируемого списка нельзя - выпадет исключение
      */
     public static List<String> task1(List<Integer> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        TreeSet<Integer> temp = new TreeSet<Integer>(source);
+        List<String> stringList = new ArrayList<String>();
+        for (Integer i : temp) {
+            stringList.add(i.toString());
+        }
+        return stringList;
     }
 
     /**
@@ -34,8 +34,15 @@ public class Lesson10_CollectionsLists {
      * Подсказка: на входе может быть любое количество чисел
      */
     public static List<Integer> task2(Integer... array) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(array));
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) % 2 == 0) {
+                list.set(i, list.get(i) + 1);
+            }
+        }
+        if (list.size() < 9) {
+            return list.subList(3, list.size());
+        }
+        return list.subList(3, 8);
     }
 }
