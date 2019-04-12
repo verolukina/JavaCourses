@@ -1,6 +1,6 @@
 package ru.java.courses.patterns.builder;
 
-public class Main {
+public class  Main {
 
     public static void main(String[] args) {
         BookBuilder bb = new BookBuilder()
@@ -18,6 +18,8 @@ public class Main {
                 .discount(12.5)
                 .year(2018)
                 .build();
+
+        System.out.println(bb.toString());
     }
 
 }

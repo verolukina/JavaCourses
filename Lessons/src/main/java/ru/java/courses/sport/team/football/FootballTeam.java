@@ -1,39 +1,38 @@
 package ru.java.courses.sport.team.football;
 
+import java.util.ArrayList;
+
 public class FootballTeam {
     private String name;
     private Coach coach;
-    private Player[] players = new Player[20];
-    private int goals;
+    private ArrayList<Player> players;
+    private int goalsCount;
 
-    public FootballTeam(String name, Coach coach, Player[] players) {
+    public FootballTeam(String name, Coach coach, ArrayList<Player> players) {
         this.name = name;
         this.coach = coach;
         this.players = players;
     }
 
-    public void addPlayers(String name) {
-        for (int i = 0; i < players.length; i++) {
-            if (players[i] == null) {
-                players[i] = new Player(name);
-                break;
-            }
+    public void addPlayers(Player player) {
+        if (players.size() <= 20) {
+            players.add(player);
         }
     }
 
-    public void deletePlayers(String name) {
-        for (int i = 0; i < players.length; i++) {
-            if (players[i].getName() == name) {
-                players[i] = null;
-            }
-        }
+    public void deletePlayers(Player player) {
+        players.remove(player);
     }
 
     public int getPlayersCount() {
-        return players.length;
+        return players.size();
     }
 
     public int getScore() {
-        return 0;
+        for (Player player : players
+        ) {
+            goalsCount = goalsCount + player.goals;
+        }
+        return goalsCount;
     }
 }

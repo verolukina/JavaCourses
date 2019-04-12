@@ -63,4 +63,7 @@ public class BookBuilder {
         return book;
     }
 
+    public String toString() {
+        return book.toString();
+    }
 }

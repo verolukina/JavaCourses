@@ -102,4 +102,19 @@ public class Book {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author='" + author + '\'' +
+                ", name='" + name + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", pagesCount=" + pagesCount +
+                ", coverColor='" + coverColor + '\'' +
+                ", annotation='" + annotation + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", discount=" + discount +
+                ", year=" + year +
+                '}';
+    }
 }

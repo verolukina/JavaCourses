@@ -1,14 +1,21 @@
 package ru.java.courses.sport.team.football;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Coach coach = new Coach("Vero Luki", 5);
-        Player player1 = new Player("Ficha");
+        Player player = new Player("Fitcha", 0, PlayerRole.FORWARD, true);
+        Player player2 = new Player("Enya", 0, PlayerRole.GOALKEEPER, false);
+        FootballTeam team = new FootballTeam("Beasts", coach, new ArrayList<Player>());
 
-        for (int i = 0; i < 20; i++) {
-            Player player1 +i = new Player("Ficha" + i);
-        }
-        FootballTeam team1 = new FootballTeam("Bulls", coach, new Player[]{player1});
+        team.addPlayers(player);
+        team.addPlayers(player2);
+
+        player.score();
+        player.score();
+        player2.score();
+
+        System.out.println(team.getScore());
     }
-
 }
